@@ -10,12 +10,19 @@
         background-color: #000000 !important; 
         margin: 0; 
         padding: 0; 
-        overflow: hidden; 
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
       }
       #unity-canvas {
         display: block;
+        /* Kiválasztja a legjobb méretet, hogy megtartsa a 16:9-es arányt */
         width: 100vw !important;
-        height: 100vh !important;
+        height: 56.25vw !important; /* 9 / 16 = 0.5625 */
+        max-height: 100vh !important;
+        max-width: 177.78vh !important; /* 16 / 9 = 1.7778 */
       }
     </style>
   </head>
