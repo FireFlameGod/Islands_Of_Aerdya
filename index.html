@@ -7,22 +7,26 @@
     <title>Unity WebGL Player | Project Tycoon</title>
     <style>
       body { 
-        background-color: #000000 !important; 
+        background-color: #000000; 
         margin: 0; 
         padding: 0; 
         overflow: hidden;
-        display: flex;
+        display: flex;          /* Középre igazítja a játékot */
         justify-content: center;
         align-items: center;
-        height: 100vh;
+        height: 100vh;          /* A test kitölti az ablakot */
+        width: 100vw;
       }
       #unity-canvas {
         display: block;
-        /* Visszaállítva a tökéletes 16:9-es arány megtartására */
-        width: 100vw !important;
-        height: 56.25vw !important; /* 9 / 16 = 0.5625 */
-        max-height: 100vh !important;
-        max-width: 177.78vh !important; /* 16 / 9 = 1.7778 */
+        
+        /* Biztonsági sáv: 96%-os méret, hogy a szélén ne akadjon be az egér */
+        width: 96vw !important;
+        height: 54vw !important; /* 96 * 0.5625 = 54 (16:9 arány) */
+        
+        /* Korlátozás, hogy ne lépje túl a képernyő magasságát */
+        max-height: 96vh !important;
+        max-width: 170.66vh !important; /* 96 * 1.7778 = 170.66 (16:9 arány) */
       }
     </style>
   </head>
