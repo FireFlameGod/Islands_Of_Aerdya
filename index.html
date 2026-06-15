@@ -18,10 +18,12 @@
       }
       #unity-canvas {
         display: block;
-        /* Kiválasztja a legjobb méretet, hogy megtartsa a 16:9-es arányt */
         width: 100vw !important;
-        height: 56.25vw !important; /* 9 / 16 = 0.5625 */
-        max-height: 100vh !important;
+        
+        /* FIX: Hozzáadunk fix 4 pixelt a kerekítési hibák és a rés kiküszöbölésére */
+        height: calc(56.25vw + 4px) !important; 
+        
+        max-height: 102vh !important; /* Itt is hagytunk egy kis ráhagyást */
         max-width: 177.78vh !important; /* 16 / 9 = 1.7778 */
       }
     </style>
