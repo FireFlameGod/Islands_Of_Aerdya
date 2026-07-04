@@ -1,1 +1,1 @@
-Islands of Aerdya.
+Islands of Aerdya
