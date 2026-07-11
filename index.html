@@ -34,6 +34,21 @@
     <canvas id="unity-canvas" tabindex="-1"></canvas>
     <script src="Build/MonsterFarmBuild.loader.js"></script>
     <script>
+      // 1. Keep-alive: 10 másodpercenként futtat egy üres műveletet,
+      // hogy a böngésző ne állítsa le a JavaScript futását háttérben.
+      setInterval(() => {
+        console.log("Keep-alive ping");
+      }, 10000); 
+
+      // 2. Figyeljük, ha a játékos elhagyja a fület
+      document.addEventListener("visibilitychange", () => {
+        if (document.visibilityState === "hidden") {
+          console.warn("A játék a háttérbe került!");
+        } else {
+          console.log("A játék újra aktív.");
+        }
+      });
+
       createUnityInstance(document.querySelector("#unity-canvas"), {
         dataUrl: "Build/MonsterFarmBuild.data.unityweb",
         frameworkUrl: "Build/MonsterFarmBuild.framework.js.unityweb",
